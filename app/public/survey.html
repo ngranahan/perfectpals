@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Perfect Pals</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <style>
+        body {
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        header {
+            background: rgb(211, 231, 230);
+            border-bottom: 4px solid rgb(159, 182, 181);
+        }
+
+        main {
+            padding-top: 100px;
+            flex: 1 0 auto;
+            background: rgb(252, 250, 250);
+        }
+
+        footer {
+            height: 100px;
+            padding-top: 30px;
+            background: rgb(211, 231, 230);
+        }
+
+        h1,
+        h3,
+        a {
+            color: slategray;
+        }
+
+        .btn {
+            margin-top: 30px;
+        }
+    </style>
+
+</head>
+
+<body class="center-align">
+
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col s12">
+                    <h1 class="header">SURVEY TIME</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="col s12">
+
+                    <form class="col s12">
+                        <div class="row">
+
+                            <div class="input-field col s6">
+                                <input id="name" type="text" class="validate">
+                                <label for="name">Name</label>
+                            </div>
+
+                        </div>
+                        <div class="row">
+
+                            <div class="input-field col s6">
+                                <input id="img_url" type="text" class="validate">
+                                <label for="img_url">Photo</label>
+                            </div>
+
+                        </div>
+                    </form>
+
+                    <a class="waves-effect waves-light btn">SUBMIT</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col s12 center-align">
+                    <span class="">
+                        <a href="/api/friends">Friend List API</a> |
+                        <a href="#">Git Hub Repo</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
