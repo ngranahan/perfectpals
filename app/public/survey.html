@@ -5,10 +5,11 @@
     <meta charset="UTF-8">
     <title>Perfect Pals</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
-    <link rel="stylesheet" href="style.css" type="text/css">
-    <script src="https://code.jquery.com/jquery.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="/style.css" type="text/css">
+
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- 
+    I was having trouble getting my app to recognize my css file. I think I'm missing something related to importing css files in node... -->
 
     <style>
         body {
@@ -24,6 +25,7 @@
 
         main {
             padding-top: 100px;
+            padding-bottom: 50px;
             flex: 1 0 auto;
             background: rgb(252, 250, 250);
         }
@@ -42,6 +44,19 @@
 
         .btn {
             margin-top: 30px;
+        }
+        .relative {
+            position: relative;
+        }
+        .absolute {
+            position: absolute;
+            right: 5px;
+            top: 5px;
+        }
+        img {
+            border-radius: 50%;
+            width: 100px;
+            margin: 20px;
         }
     </style>
 
@@ -63,11 +78,18 @@
         <div class="container">
             <div class="row">
                 <div class="col s12">
+                    <p>Please include your name, a link to your photo, and a rating for how strongly you agree with each statement
+                        below.
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12">
 
                     <form class="col s12">
                         <div class="row">
 
-                            <div class="input-field col s6">
+                            <div class="input-field col s12">
                                 <input id="name" type="text" class="validate">
                                 <label for="name">Name</label>
                             </div>
@@ -75,19 +97,167 @@
                         </div>
                         <div class="row">
 
-                            <div class="input-field col s6">
-                                <input id="img_url" type="text" class="validate">
-                                <label for="img_url">Photo</label>
+                            <div class="input-field col s12">
+                                <input id="photo" type="text" class="validate">
+                                <label for="photo">Photo URL</label>
                             </div>
 
                         </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <select id="q1">
+                                    <option value="" disabled selected>Michelangelo is the best Ninja Turtle</option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+                                <label>Question 1</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <select id="q2">
+                                    <option value="" disabled selected>Beer, not wine</option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+                                <label>Question 2</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <select id="q3">
+                                    <option value="" disabled selected>Let's ride bikes instead of driving</option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+                                <label>Question 3</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <select id="q4">
+                                    <option value="" disabled selected>Yay, dogs!</option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+                                <label>Question 4</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <select id="q5">
+                                    <option value="" disabled selected>There's no such thing as too much coffee</option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+                                <label>Question 5</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <select id="q6">
+                                    <option value="" disabled selected>Mint Chocolate Chip is the best ice cream flavor</option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+                                <label>Question 6</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <select id="q7">
+                                    <option value="" disabled selected>More Cowbell</option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+                                <label>Question 7</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <select id="q8">
+                                    <option value="" disabled selected>Tabs, not spaces</option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+                                <label>Question 8</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <select id="q9">
+                                    <option value="" disabled selected>The earth is flat</option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+                                <label>Question 9</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <select id="q10">
+                                    <option value="" disabled selected>The Ramones invented punk rock</option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+                                <label>Question 10</label>
+                            </div>
+                        </div>
+
                     </form>
 
-                    <a class="waves-effect waves-light btn">SUBMIT</a>
+                    <a id="submit" class="waves-effect waves-light btn">SUBMIT</a>
                 </div>
             </div>
         </div>
+
+        <!-- Modal -->
+        <div id="modal" class="modal ">
+
+            <div class="modal-content relative">
+                <a href="#!" class="modal-close absolute">
+                    <i class="material-icons">close</i>
+                </a>
+                <h2>Meet Your New Pal!</h2>
+                <img id="friend-img" src="" alt="">
+                <h4 id="friend-name"></h4>
+
+            </div>
+
+        </div>
+
     </main>
+
 
     <footer>
         <div class="container">
@@ -101,6 +271,99 @@
             </div>
         </div>
     </footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+
+    <script type="text/javascript">
+        console.log("running");
+        $('select').formSelect();
+        $('.modal').modal({
+            opacity: .2
+        });
+
+        $("#submit").on("click", function (e) {
+            e.preventDefault();
+            console.log("button clicked");
+
+            var newFriend = {
+                name: $("#name").val().trim(),
+                photo: $("#photo").val().trim(),
+                scores: [
+                    parseInt($("#q1").val()),
+                    parseInt($("#q2").val()),
+                    parseInt($("#q3").val()),
+                    parseInt($("#q4").val()),
+                    parseInt($("#q5").val()),
+                    parseInt($("#q6").val()),
+                    parseInt($("#q7").val()),
+                    parseInt($("#q8").val()),
+                    parseInt($("#q9").val()),
+                    parseInt($("#q10").val()),
+                ]
+            };
+
+            // The match function runs before the new user data is posted to the api
+            matchFriend(newFriend);
+
+            $.post("/api/friends", newFriend).then(function (data) {
+                console.log("new friend data: " + data);
+            });
+
+        });
+
+        function matchFriend(newFriend) {
+            var currentURL = window.location.origin;
+
+            $.ajax({ url: currentURL + "/api/friends", method: "GET" }).then(function (friendData) {
+
+                // Just displaying basic info for testing
+                console.log("URL: " + currentURL + "/api/friends");
+                console.log(friendData);
+                console.log("newFriend: " + JSON.stringify(newFriend));
+
+                // Loop through array of friend data find the difference between stored answers and current user's answers
+                var differences = [];
+
+                for (var i = 0; i < friendData.length; i++) {
+                    console.log(friendData[i].scores);
+                    var q1 = Math.abs(friendData[i].scores[0] - newFriend.scores[0]);
+                    var q2 = Math.abs(friendData[i].scores[1] - newFriend.scores[1]);
+                    var q3 = Math.abs(friendData[i].scores[2] - newFriend.scores[2]);
+                    var q4 = Math.abs(friendData[i].scores[3] - newFriend.scores[3]);
+                    var q5 = Math.abs(friendData[i].scores[4] - newFriend.scores[4]);
+                    var q6 = Math.abs(friendData[i].scores[5] - newFriend.scores[5]);
+                    var q7 = Math.abs(friendData[i].scores[6] - newFriend.scores[6]);
+                    var q8 = Math.abs(friendData[i].scores[7] - newFriend.scores[7]);
+                    var q9 = Math.abs(friendData[i].scores[8] - newFriend.scores[8]);
+                    var q10 = Math.abs(friendData[i].scores[9] - newFriend.scores[9]);
+                    var totalDiff = q1 + q2 + q3 + q4 + q6 + q7 + q8 + q9 + q10;
+                    console.log("total difference: " + totalDiff);
+                    differences.push(totalDiff);
+                }
+
+                console.log("Differences Array: " + differences);
+                // Find the smallest difference
+                var smallestDiff = Math.min(...differences);
+                var matchIndex = differences.indexOf(smallestDiff);
+                console.log("match Index: " + matchIndex);
+                console.log("Friend Match: " + JSON.stringify(friendData[matchIndex]));
+
+                // Display modal with matched friend data
+                showModal(friendData, matchIndex);
+
+            });
+        }
+
+        function showModal(friendData, matchIndex) {
+            $('#modal').modal('open');
+            $("#friend-img").attr("src", friendData[matchIndex].photo);
+            $("#friend-name").text(friendData[matchIndex].name);
+
+        }
+
+
+    </script>
 </body>
 
 </html>

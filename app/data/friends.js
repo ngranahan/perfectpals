@@ -18,70 +18,53 @@ var friendsArr = [
         ]
     },
     {
-        name: "Dummy Data 2",
-        photo: "https://vignette.wikia.nocookie.net/thebiglebowski/images/7/7e/The_Dude.jpeg/revision/latest?cb=20111216183045",
+        name: "David Bowie",
+        photo: "http://dazedimg.dazedgroup.netdna-cdn.com/640/0-309-1812-1208/azure/dazed-prod/1180/6/1186389.jpg",
         scores: [
-            1,
             2,
-            4,
-            6,
-            3,
+            1,
             5,
             1,
-            3,
             4,
+            2,
+            2,
+            4,
+            1,
             4
         ]
     },
     {
-        name: "Dummy Data 3",
-        photo: "https://vignette.wikia.nocookie.net/thebiglebowski/images/7/7e/The_Dude.jpeg/revision/latest?cb=20111216183045",
+        name: "Prince",
+        photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Prince_at_Coachella_001.jpg/220px-Prince_at_Coachella_001.jpg",
         scores: [
-            1,
+            2,
             3,
-            1,
-            4,
             5,
-            4,
             2,
             1,
-            4,
-            2
+            3,
+            2,
+            3,
+            5,
+            1
         ]
     },
     {
-        name: "Dummy Data 4",
-        photo: "https://vignette.wikia.nocookie.net/thebiglebowski/images/7/7e/The_Dude.jpeg/revision/latest?cb=20111216183045",
+        name: "Puppy",
+        photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Golde33443.jpg/280px-Golde33443.jpg",
         scores: [
             1,
             3,
+            1,
+            5,
+            1,
             3,
             4,
-            5,
-            3,
-            5,
             2,
-            5,
-            2
-        ]
-    },
-    {
-        name: "Dummy Data 5",
-        photo: "https://vignette.wikia.nocookie.net/thebiglebowski/images/7/7e/The_Dude.jpeg/revision/latest?cb=20111216183045",
-        scores: [
-            3,
-            3,
-            5,
-            3,
             1,
-            2,
-            4,
-            1,
-            2,
             5
         ]
-    },
-
+    }
 ];
 
 module.exports = friendsArr;

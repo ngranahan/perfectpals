@@ -10,6 +10,7 @@ var app = express();
 // Necessary middleware for bodyparser
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(express.static(path.join(__dirname, '/public')));
 
 // Let's the server access the routes
 require("./app/routing/apiRoutes.js")(app);
